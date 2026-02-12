@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SVP Medicare LLP | Pharmaceutical Distribution in India</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN for WhatsApp Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     * {
@@ -26,30 +28,26 @@
       color: #fff;
       padding: 1rem 3%;
       display: flex;
-      justify-content: space-between; /* logo-title left, nav right */
+      justify-content: flex-start;
       align-items: center;
-      position: fixed;   /* stays fixed on scroll */
-      width: 100%;
+      position: sticky;
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 10;
     }
 
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 15px; /* space between logo and text */
+    header img {
+      height: 60px; /* Logo size */
+      margin-right: 15px;
     }
 
-    .logo-title img {
-      height: 60px; /* increase or decrease logo size */
-      width: auto;
-    }
-
-    .logo-title h1 {
+    header h1 {
       font-size: 1.6rem;
       font-weight: 600;
-      margin: 0;
+      margin-right: auto;
+    }
+
+    nav {
+      margin-left: auto;
     }
 
     nav a {
@@ -71,7 +69,6 @@
       color: white;
       text-align: center;
       padding: 150px 20px;
-      margin-top: 80px; /* push content below fixed header */
     }
 
     .hero h2 {
@@ -253,6 +250,30 @@
       font-size: 0.9rem;
     }
 
+    /* WHATSAPP FLOAT BUTTON */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+      font-size: 30px;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero h2 {
@@ -265,20 +286,14 @@
       nav {
         margin-top: 10px;
       }
-      .logo-title {
-        justify-content: center;
-      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="logo-title">
-      <img src="logo.png" alt="SVP Medicare Logo">
-      <h1>SVP Medicare LLP</h1>
-    </div>
-
+    <img src="logo.png" alt="Logo"> <!-- Replace with your logo image -->
+    <h1>SVP Medicare LLP</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#products">Products</a>
@@ -355,13 +370,18 @@
     <p>Email: info@svpmedicare.com | Phone: +91 84649 66666</p>
   </footer>
 
-  <!-- LIGHTBOX -->
+  <!-- LIGHTBOX STRUCTURE -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-content">
       <img src="" alt="">
       <div class="lightbox-caption"></div>
     </div>
   </div>
+
+  <!-- WHATSAPP FLOATING BUTTON USING FONT AWESOME ICON -->
+  <a href="https://wa.me/918464966666" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <script>
     const products = document.querySelectorAll('.product-item');
